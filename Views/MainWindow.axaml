@@ -7,7 +7,10 @@
         x:Class="WhiteNoise.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="WhiteNoise">
+        Title="WhiteNoise"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +18,51 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Panel>
+        <DockPanel LastChildFill="True">
+            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock="Top" Height="45">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="0.50" MaterialOpacity="0.40" />
+                </ExperimentalAcrylicBorder.Material>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBox Height="25" Width="500" AcceptsReturn="True" TextWrapping="Wrap"/>
+                    </StackPanel>
+            </ExperimentalAcrylicBorder>
+
+            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock="Left" Width="280">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="0.75" MaterialOpacity="0.40" />
+                </ExperimentalAcrylicBorder.Material>
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Rectangle Height="150" Width="150" Fill="LightGray"/>
+                    <!-- <Image Height="30" Width="30"
+                    Stretch="UniformToFill"
+                    Source="/Assets/avalonia-logo.ico"/> -->
+
+                    <TextBlock Foreground="White" Margin="0 20 0 0" TextAlignment="Center">Amour Plastique</TextBlock>
+                    <Slider x:Name="slider"/>
+                </StackPanel>
+
+            </ExperimentalAcrylicBorder>
+
+            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock ="Right">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="1" MaterialOpacity="0.40" />
+                </ExperimentalAcrylicBorder.Material>
+
+                <ScrollViewer>
+                    <StackPanel VerticalAlignment="Top">
+                        <ListBox>
+                            <ListBox.ItemTemplate>
+
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
+
+            </ExperimentalAcrylicBorder>
+        </DockPanel>
+    </Panel>
 
 </Window>
