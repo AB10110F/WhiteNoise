@@ -18,48 +18,112 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+    <Window.Styles>
+        <Style Selector="Button.rounded">
+            <!-- <Setter Property="Margin" Value="9,3,9,3"/> -->
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <!-- <Setter Property="Padding" Value="6"/> -->
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <!-- <Setter Property="Content" Value="Centered Text"/> -->
+        </Style>
+        <Style Selector="Button.rounded /template/ ContentPresenter">
+            <Setter Property="CornerRadius" Value="20"/>
+        </Style>
+        <Style Selector="Button:pointerover.rounded /template/ ContentPresenter">
+            <Setter Property="Background" Value="#80e0e0e0"/>
+        </Style>
+
+        <Style Selector="Slider.highlight">
+            <Setter Property="Height" Value="40"/>
+        </Style>
+        <Style Selector="Slider.highlight /template/ Thumb">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Styles>
+
     <Panel>
         <DockPanel LastChildFill="True">
-            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock="Top" Height="45">
+
+            <ExperimentalAcrylicBorder IsHitTestVisible="True" DockPanel.Dock="Top" Height="50">
                 <ExperimentalAcrylicBorder.Material>
-                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="0.50" MaterialOpacity="0.40" />
+                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#232323" TintOpacity="0.75" MaterialOpacity="0.40" />
                 </ExperimentalAcrylicBorder.Material>
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <TextBox Height="25" Width="500" AcceptsReturn="True" TextWrapping="Wrap"/>
                     </StackPanel>
             </ExperimentalAcrylicBorder>
 
-            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock="Left" Width="280">
+            <ExperimentalAcrylicBorder IsHitTestVisible="True" DockPanel.Dock="Left" Width="450">
                 <ExperimentalAcrylicBorder.Material>
-                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="0.75" MaterialOpacity="0.40" />
+                    <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#232323" TintOpacity="0.75" MaterialOpacity="0.40" />
                 </ExperimentalAcrylicBorder.Material>
+                    <Border BorderThickness="0" DockPanel.Dock="Left" Width="450">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Rectangle Height="250" Width="250" Fill="LightGray"/>
+                            <!-- <Image Height="30" Width="30"
+                            Stretch="UniformToFill"
+                            Source="/Assets/avalonia-logo.ico"/> -->
 
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Rectangle Height="150" Width="150" Fill="LightGray"/>
-                    <!-- <Image Height="30" Width="30"
-                    Stretch="UniformToFill"
-                    Source="/Assets/avalonia-logo.ico"/> -->
-
-                    <TextBlock Foreground="White" Margin="0 20 0 0" TextAlignment="Center">Amour Plastique</TextBlock>
-                    <Slider x:Name="slider"/>
-                </StackPanel>
-
+                            <TextBlock Foreground="White" Margin="0 20 0 0" TextAlignment="Center">Amour Plastique</TextBlock>
+                            <TextBlock Foreground="White" Margin="0 20 0 0" TextAlignment="Center">Album</TextBlock>
+                            <Slider Classes="highlight" x:Name="progress"/>
+                                <!-- <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0 0 0 20" Width="250"> -->
+                                <!--     <TextBlock Foreground="White" Margin="0 0 0 0" TextAlignment="Left">00:00</TextBlock> -->
+                                <!--     <TextBlock Foreground="White" Margin="0 0 0 0" TextAlignment="Right">00:00</TextBlock> -->
+                                <!-- </StackPanel> -->
+                                <DockPanel HorizontalAlignment="Stretch" Margin="0 0 0 10">
+                                    <TextBlock Foreground="White" DockPanel.Dock="Left" TextAlignment="Left" VerticalAlignment="Center">00:00</TextBlock>
+                                    <TextBlock Foreground="White" DockPanel.Dock="Right" TextAlignment="Right" VerticalAlignment="Center">00:00</TextBlock>
+                                </DockPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Classes="rounded" Content="B" Command="" Margin="0,0,10,0" />
+                                    <Button Classes="rounded" Content="P" Command="" Margin="0,0,10,0" />
+                                    <Button Classes="rounded" Content="N" Command="" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="-" Command="" Margin="0,0,10,0" />
+                                    <Slider Classes="highlight" x:Name="volume" Width="200" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <Button Content="+" Command="" />
+                                </StackPanel>
+                        </StackPanel>
+                    </Border>
             </ExperimentalAcrylicBorder>
 
-            <ExperimentalAcrylicBorder IsHitTestVisible="False" DockPanel.Dock ="Right">
+            <ExperimentalAcrylicBorder IsHitTestVisible="True" DockPanel.Dock ="Right">
                 <ExperimentalAcrylicBorder.Material>
                     <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="1" MaterialOpacity="0.40" />
                 </ExperimentalAcrylicBorder.Material>
+                    <TabControl>
+                        <TabItem Header="Songs">
+                          <TextBlock>This is tab 1 content</TextBlock>
+                        </TabItem>
+                        <TabItem Header="Albums">
+                          <TextBlock>This is tab 2 content</TextBlock>
+                        </TabItem>
+                        <TabItem Header="Artists">
+                          <TextBlock>This is tab 3 content</TextBlock>
+                        </TabItem>
+                        <TabItem Header="Playlists">
+                          <TextBlock>This is tab 4 content</TextBlock>
+                        </TabItem>
+                    </TabControl>
 
-                <ScrollViewer>
-                    <StackPanel VerticalAlignment="Top">
-                        <ListBox>
-                            <ListBox.ItemTemplate>
-
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </StackPanel>
-                </ScrollViewer>
+                <!-- <ScrollViewer> -->
+                <!--     <StackPanel VerticalAlignment="Top"> -->
+                <!--         <ListBox> -->
+                <!--             <ListBox.ItemTemplate> -->
+                <!---->
+                <!--             </ListBox.ItemTemplate> -->
+                <!--         </ListBox> -->
+                <!--     </StackPanel> -->
+                <!-- </ScrollViewer> -->
 
             </ExperimentalAcrylicBorder>
         </DockPanel>
