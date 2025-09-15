@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+    <!-- BUTTONS -->
+    <Style Selector="Button.rounded">
+        <!-- <Setter Property="Margin" Value="9,3,9,3"/> -->
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#ffffff"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="10"/>
+        <!-- <Setter Property="HorizontalContentAlignment" Value="Center"/> -->
+        <!-- <Setter Property="VerticalContentAlignment" Value="Center"/> -->
+        <!-- <Setter Property="Content" Value="Centered Text"/> -->
+    </Style>
+    <Style Selector="Button.rounded /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="20"/>
+    </Style>
+    <Style Selector="Button:pointerover.rounded /template/ ContentPresenter">
+        <Setter Property="Background" Value="#80e0e0e0"/>
+    </Style>
+
+    <!-- SLIDER -->
+    <!-- <Style Selector="Slider.highlight"> -->
+    <!--     <Setter Property="Height" Value="40"/> -->
+        <!-- <Setter Property="Background" Value="#555555"/> --> <!-- unfilled -->
+        <!-- <Setter Property="Foreground" Value="#ffffff"/> --> <!-- filled -->
+    <!-- </Style> -->
+    <!-- <Style Selector="Slider.highlight /template/ Thumb"> -->
+    <!--     <Setter Property="Background" Value="White"/> -->
+    <!--     <Setter Property="BorderBrush" Value="White"/> -->
+    <!--     <Setter Property="BorderThickness" Value="1"/> -->
+    <!-- </Style> -->
+
+    <!-- TABS -->
+    <Style Selector="TabControl /template/ WrapPanel"> <Setter Property="HorizontalAlignment" Value="Center"/> </Style>
+    <Style Selector="TabItem:selected /template/ Border#PART_SelectedPipe">
+        <!-- <Setter Property="IsVisible" Value="false"/> -->
+        <Setter Property="Width" Value="20"/> <!-- fixed width -->
+        <Setter Property="Background" Value="White"/> <!-- fixed width -->
+    </Style>
+
+</Styles>

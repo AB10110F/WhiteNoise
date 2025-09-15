@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WhiteNoise.Views.Components.PlayerControls">
+    <Border BorderThickness="0" DockPanel.Dock="Left" Width="450">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBlock Foreground="White" Margin="0 0 0 20" TextAlignment="Center">U Should Run</TextBlock>
+
+            <Image Height="280" Width="280" Stretch="UniformToFill" Source="/Assets/USR.jpg"/>
+
+            <TextBlock Foreground="White" Margin="0 20 0 0" TextAlignment="Center" FontSize="17" FontWeight="SemiBold">U Should Run</TextBlock>
+            <TextBlock Foreground="White" Margin="0 5 0 0" TextAlignment="Center">Intelligency</TextBlock>
+            <Slider Classes="highlight" x:Name="progress"/>
+            <!-- <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0 0 0 20" Width="250"> -->
+            <!--     <TextBlock Foreground="White" Margin="0 0 0 0" TextAlignment="Left">00:00</TextBlock> -->
+            <!--     <TextBlock Foreground="White" Margin="0 0 0 0" TextAlignment="Right">00:00</TextBlock> -->
+            <!-- </StackPanel> -->
+            <DockPanel HorizontalAlignment="Stretch" Margin="0 0 0 10">
+                <TextBlock Foreground="White" DockPanel.Dock="Left" TextAlignment="Left" VerticalAlignment="Center">00:00</TextBlock>
+                <TextBlock Foreground="White" DockPanel.Dock="Right" TextAlignment="Right" VerticalAlignment="Center">00:00</TextBlock>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Classes="rounded" Command="" Margin="0,0,10,0">
+                </Button>
+                <Button Classes="rounded" Command="" Margin="0,0,10,0">
+                </Button>
+                <Button Classes="rounded" Command="">
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="-" Command="" Margin="0,0,10,0" />
+                <Slider Classes="highlight" x:Name="volume" Width="200" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <Button Content="+" Command="" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
