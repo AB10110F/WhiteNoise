@@ -47,16 +47,44 @@
                     <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#000000" TintOpacity="1" MaterialOpacity="0.40" />
                 </ExperimentalAcrylicBorder.Material>
                     <TabControl>
-                        <TabItem Header="Songs" HorizontalAlignment="Center">
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <!-- <Path Data="{StaticResource Music}" Stroke="White" StrokeThickness="0.1" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+                                    <PathIcon Data="{StaticResource Music}"/>
+                                    <TextBlock Text="Songs" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </TabItem.Header>
                             <components:SongsList/>
                         </TabItem>
-                        <TabItem Header="Albums" HorizontalAlignment="Center">
+
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Path Data="{StaticResource Album}" Stroke="White" StrokeThickness="0.1" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Albums" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </TabItem.Header>
                           <TextBlock>This is albums tab content</TextBlock>
                         </TabItem>
-                        <TabItem Header="Artists" HorizontalAlignment="Center">
+
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Path Data="{StaticResource Artists}" Stroke="White" StrokeThickness="0.1" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Artists" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </TabItem.Header>
                           <TextBlock>This is artists tab content</TextBlock>
                         </TabItem>
-                        <TabItem Header="Playlists" HorizontalAlignment="Center">
+
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Path Data="{StaticResource Playlists}" Stroke="White" StrokeThickness="0.1" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Playlists" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </TabItem.Header>
                           <TextBlock>This is playlists tab content</TextBlock>
                         </TabItem>
                     </TabControl>
